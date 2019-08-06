@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
-  <a class="navbar-brand" href="#"><img src="/img/logo.png" style="max-height:75px;">Jim's Offroad Service</a>
+  <a class="navbar-brand" href="#"><img src="{{ url('img/logo.png') }}" style="max-height:75px;">Jim's Offroad Service</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,7 +10,7 @@
         <a class="nav-link" href="{{ route('home') }}">Current Tickets</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Create a Ticket</a>
+        <a class="nav-link" href="{{ route('create') }}">Create a Ticket</a>
       </li>
     </ul>
   </div>

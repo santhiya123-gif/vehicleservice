@@ -15,6 +15,7 @@
   <!-- List Tickets -->
   <section class="bg-light">
     <div class="container">
+      <a class="btn btn-primary" href="{{ route('create') }}"> Create New </a>
       <div class="row">
           <table class="table table-striped">
             <thead>
@@ -31,7 +32,7 @@
                 <td>{{ $request->client_name }}</td>
                 <td>{{ $request->status }}</td>
                 <td>{{ $request->updated_at->format('m/d/Y h:i a') }}</td>
-                <td><a href="{{ route('edit',[$request->id]) }}" class="btn btn-primary">EDIT</a></td>
+                <td><a href="{{ url('create/'.$request->id) }}" class="btn btn-primary"> EDIT </a><a href="{{ url('delete/'.$request->id) }}" class="btn btn-danger"> Delete </a></td>
               </tr>
               @endforeach
             </tbody>

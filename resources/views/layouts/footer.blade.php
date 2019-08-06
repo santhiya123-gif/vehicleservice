@@ -46,8 +46,50 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="/js/app.js"></script>
+  <script src="{{ url('js/app.js') }}"></script>
+  <script src="{{ url('js/toastr.min.js') }}"></script>
   <script type="text/javascript">
-    $(document).ready(function(){ console.log('loaded');});
+    $(document).ready(function(){ console.log('loaded');
+
+      $('#makev').on('change',function(){
+// alert();
+        var id = $(this).children("option:selected").attr('data-id');
+        // alert(id);
+        $.ajax({
+          url: "{{ url('getmodels') }}",
+          type: "POST",
+          data: {"_token": "{{ csrf_token() }}", "id": id},
+          success: function(data){
+            if(data){
+              $('#vehicle_model_id').html(data);
+            }
+          }
+        })
+      });
+
+  });
+
+    @if(Session::has('message'))
+    var type = "{{ Session::get('alert-type', 'info') }}";
+    switch(type){
+        case 'info':
+            toastr.info("{{ Session::get('message') }}");
+            break;
+
+        case 'warning':
+            toastr.warning("{{ Session::get('message') }}");
+            break;
+
+        case 'success':
+            toastr.success("{{ Session::get('message') }}");
+            break;
+
+        case 'error':
+            toastr.error("{{ Session::get('message') }}");
+            break;
+    }
+  @endif
+
+</script>
   </script>
   @stack('scripts')

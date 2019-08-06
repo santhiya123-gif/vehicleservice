@@ -10,7 +10,8 @@ class VehicleMakeTableSeeder extends Seeder {
    * @return void
    */
   public function run(){
-    $models = ['Jeep','Ford'];
+    $models = ['Dodge','Toyota'];
+    
     foreach($models AS $model){
       VehicleMakes::firstOrCreate([
         'title'=> $model

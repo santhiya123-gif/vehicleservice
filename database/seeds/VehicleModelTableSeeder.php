@@ -15,28 +15,20 @@ class VehicleModelTableSeeder extends Seeder
     $vehicleMakes = VehicleMakes::all();
     $models = [
       [
-        'make'  => 'Jeep',
-        'model' => 'Wrangler'
+        'make'  => 'Dodge',
+        'model' => 'Ram 1500'
       ],
       [
-        'make'  => 'Jeep',
-        'model' => 'Gladiator'
+        'make'  => 'Dodge',
+        'model' => 'Ram Rebel'
       ],
       [
-        'make'  => 'Jeep',
-        'model' => 'Cherokee'
-      ],
-      [
-        'make'  => 'Ford',
+        'make'  => 'Toyota',
         'model' => 'Ranger'
       ],
       [
-        'make'  => 'Ford',
-        'model' => 'Bronco'
-      ],
-      [
-        'make'  => 'Ford',
-        'model' => 'F-150'
+        'make'  => 'Toyota',
+        'model' => 'Tacoma'
       ],
     ];
     foreach($models AS $model){
